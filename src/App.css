@@ -1,0 +1,97 @@
+body, a {
+    font-family: 'Roboto', sans-serif !important;
+    color: #5c5c5c !important;
+    font-weight: normal !important;
+}
+
+html, body {
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+.rounded {
+    border-radius: 0.25rem !important;
+    max-width: 150px;
+    padding-right: 3%;
+}
+
+.nav {
+    padding: .5% 10% .5% 15% !important;
+    height: 11vh;
+}
+
+.nav-item {
+    margin-bottom: 1%;
+}
+
+.nav-item:hover, .nav-item:active {
+    border-top: 4px solid #ff6a00;
+    transition: all .20s ease-out !important;
+}
+
+.subBanner {
+    height: 25px;
+    background: #6aa5b3;
+}
+
+.btn {
+    color: #fff !important;
+    background-color: #5F6BE3 !important;
+    border-color: #5F6BE3 !important;
+    border-radius: 20px !important;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #5F6BE3 !important;
+    border-color: #5F6BE3 !important;
+}
+
+.btn-secondary {
+    background-color: darkred !important;
+    border-color: darkred !important;
+}
+
+img.card-img-top {
+    max-width: fit-content;
+    max-height: 200px;
+    /* overflow: hidden; */
+}
+
+.card-title.h5 {
+    font-size: 1rem;
+}
+
+.homeBg {
+    background: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1606255499.jpg);
+    background-size: 100%;
+    height: inherit;
+    background-repeat: repeat-y;
+
+}
+
+.height, div#root {
+    height: 100%;
+}
+
+.homeOverlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding: 5%;
+}
+
+.content, .content-50 {
+    background-color: white;
+    border-radius: 30px;
+    padding: 5% !important;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-50 {
+    width: 50%;
+}

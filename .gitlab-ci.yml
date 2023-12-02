@@ -1,0 +1,34 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+  - package
+
+build:
+    stage: build
+    image: node:16
+    script:
+      - yarn install
+      - CI=false yarn build
+      - echo "Build successful."
+test:
+    stage: test
+    script:
+      - yarn install
+      - yarn test
+    allow_failure: true
+
+docker:
+    stage: package
+    variables:
+      IMAGE_NAME: "watchlist_frontend"
+      DOCKER_DRIVER: overlay2
+    image: docker
+    services:
+    - docker:18.09.7-dind
+
+    script:
+    - docker build -t thebookthief/$IMAGE_NAME .
+    - docker login -u thebookthief -p $Docker_Hub_Token
+    - docker push thebookthief/$IMAGE_NAME

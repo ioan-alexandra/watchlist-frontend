@@ -1,0 +1,24 @@
+version: '3'
+services:
+  playground-web-db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'NysHvhzzBX'
+      MYSQL_USER: "NysHvhzzBX"
+      MYSQL_PASSWORD: 'jk8IhUZ2Sq'
+      MYSQL_ROOT_PASSWORD: 'jk8IhUZ2Sq'
+    ports:
+      - 3306:3306
+  playground-web-frontend:
+    image: frontcontainer:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://playground-web-backend:8080/
+    ports:
+      - 3000:3000
+  playground-web-backend:
+    image: backendcontainer:latest
+    environment:
+      MYSQL_URI: jdbc:mysql://remotemysql.com:3306/NysHvhzzBX
+    ports:
+      - 8080:8080
